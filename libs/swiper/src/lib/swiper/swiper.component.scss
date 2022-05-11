@@ -1,0 +1,27 @@
+.slider{
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  .slide {
+    min-width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+  }
+}
+
+.btn{
+  position: absolute;
+  top: 250px;
+
+  &.prev{
+    left: 30px;
+  }
+
+  &.next {
+    right: 30px;
+  }
+}

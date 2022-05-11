@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "marketplace": "apps/marketplace",
-    "marketplace-e2e": "apps/marketplace-e2e"
+    "marketplace-e2e": "apps/marketplace-e2e",
+    "retry": "libs/retry",
+    "swiper": "libs/swiper",
+    "ui": "libs/ui"
   }
 }

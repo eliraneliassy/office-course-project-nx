@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@office-course-project2/ui": ["libs/ui/src/index.ts"],
+      "@office/retry": ["libs/retry/src/index.ts"],
+      "@office/swiper": ["libs/swiper/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

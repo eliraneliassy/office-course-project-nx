@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/swiper",
+  "sourceRoot": "libs/swiper/src",
+  "prefix": "office-course-project2",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/swiper"],
+      "options": {
+        "jestConfig": "libs/swiper/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/swiper/src/**/*.ts",
+          "libs/swiper/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

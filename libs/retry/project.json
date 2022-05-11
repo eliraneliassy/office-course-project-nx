@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/retry",
+  "sourceRoot": "libs/retry/src",
+  "prefix": "office-course-project2",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/retry"],
+      "options": {
+        "jestConfig": "libs/retry/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/retry/src/**/*.ts",
+          "libs/retry/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
