@@ -1,1 +1,7 @@
-<ui-swiper [slides]="slides"></ui-swiper>
+<ui-swiper [slides]="slides" [slidesTemplate]="myTempalte"></ui-swiper>
+
+<ng-template #myTempalte let-name let-nav="nav">
+  {{name}}
+
+  <button (click)="nav.next()">My own next</button>
+</ng-template>

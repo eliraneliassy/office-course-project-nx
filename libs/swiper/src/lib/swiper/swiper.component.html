@@ -2,7 +2,15 @@
 
     <div class="slider">
         <div class="slide" *ngFor="let slide of slides">
-            <img [src]="slide">
+            <ng-container *ngTemplateOutlet="slidesTemplate || defaultTemaplte; context: {
+                            $implicit: slide, nav: nav
+                          }"
+
+            ></ng-container>
+
+            <ng-template #defaultTemaplte>
+              <img [src]="slide">
+            </ng-template>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Inject, AfterViewInit, TemplateRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -10,6 +10,13 @@ import { DOCUMENT } from '@angular/common';
 export class SwiperComponent implements OnInit, AfterViewInit {
 
   @Input() slides: string[] = [];
+  @Input() slidesTemplate: TemplateRef<any> | null = null;
+
+  nav = {
+    prev: () => this.slide(-1),
+    next: () => this.slide(+1)
+  };
+
   currentIndex: number = 0;
 
   slidesPostiosion: any[] = [];
