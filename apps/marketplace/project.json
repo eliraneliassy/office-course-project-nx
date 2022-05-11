@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/marketplace",
+  "sourceRoot": "apps/marketplace/src",
+  "prefix": "office-course-project2",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/marketplace",
+        "index": "apps/marketplace/src/index.html",
+        "main": "apps/marketplace/src/main.ts",
+        "polyfills": "apps/marketplace/src/polyfills.ts",
+        "tsConfig": "apps/marketplace/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/marketplace/src/favicon.ico",
+          "apps/marketplace/src/assets"
+        ],
+        "styles": ["apps/marketplace/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/marketplace/src/environments/environment.ts",
+              "with": "apps/marketplace/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "marketplace:build:production"
+        },
+        "development": {
+          "browserTarget": "marketplace:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "marketplace:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/marketplace/src/**/*.ts",
+          "apps/marketplace/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/marketplace"],
+      "options": {
+        "jestConfig": "apps/marketplace/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "marketplace": "apps/marketplace",
+    "marketplace-e2e": "apps/marketplace-e2e"
+  }
+}

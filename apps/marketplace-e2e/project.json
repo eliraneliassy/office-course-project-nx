@@ -1,0 +1,28 @@
+{
+  "root": "apps/marketplace-e2e",
+  "sourceRoot": "apps/marketplace-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/marketplace-e2e/cypress.json",
+        "devServerTarget": "marketplace:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "marketplace:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/marketplace-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["marketplace"]
+}
